@@ -42,13 +42,12 @@ class SecurityConfig {
         .roles("NON-OWNER") 
         .build();
 
-    
-    UserDetails josh = users
-        .username("josh")
-        .password(passwordEncoder.encode("qrs456"))
-        .roles("OWNER") 
-        .build();
-    return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards, josh);
+    UserDetails kumar = users
+            .username("kumar2")
+            .password(passwordEncoder.encode("xyz789"))
+            .roles("CARD-OWNER")
+            .build();
+    return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards, kumar);
     }
 
     @Bean
